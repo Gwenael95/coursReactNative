@@ -1,14 +1,29 @@
-import {Text, TextInput, TouchableOpacity, View} from "react-native";
 import React from "react";
-import {stylesTodoList} from "./exos/ppt5/TodoListScreen";
+import {StyleSheet, TextInput, View} from "react-native";
+import { Button } from "./Button";
 
 export const AddTodoForm = ({value, onChange, onSubmit}) => (
-    <View style={[stylesTodoList.createContainer, stylesTodoList.width100]}>
-        <TextInput style={[stylesTodoList.inputForm, stylesTodoList.flex3]} placeholder="A faire" value={value} onChangeText={onChange}></TextInput>
-        <TouchableOpacity onPress={onSubmit} style={stylesTodoList.flex1}>
-            <View style={stylesTodoList.button}>
-                <Text style={stylesTodoList.buttonText}>Ajouter</Text>
-            </View>
-        </TouchableOpacity>
+    <View style={[stylesAddTodoForm.createContainer, stylesAddTodoForm.width100]}>
+        <TextInput style={[stylesAddTodoForm.inputForm, stylesAddTodoForm.flex3]} placeholder="A faire"
+                   value={value} onChangeText={onChange}></TextInput>
+        <Button onPress={onSubmit} name="Ajouter" noWidth={true}></Button>
     </View>
 );
+
+export const stylesAddTodoForm = StyleSheet.create({
+    createContainer:{
+        justifyContent:"space-between",
+        flexDirection: "row",
+        alignItems:"baseline"
+    },
+    inputForm:{
+        backgroundColor:"#BCBFBFBF",
+        borderRadius:5,
+    },
+    width100:{
+        width:"100%"
+    },
+    flex3:{
+        flex:3
+    },
+})

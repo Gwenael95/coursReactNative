@@ -4,8 +4,10 @@ import {Image} from "react-native";
 import { TodoNavigator } from "./TodoNavigator"
 import {FormEnhanced} from "../exos/ppt5/FormEnhanced";
 import {NamesList} from "../exos/ppt4/NamesList";
+import {NamesListArray} from "../exos/ppt4/NamesListArray";
 import {Flexbox} from "../exos/ppt4/Flexbox";
 import {Form} from "../exos/ppt4/Form";
+import {FORM_IMG_URI, FLEXBOX_IMG_URI, FORM_ENHANCED_IMG_URI, LIST_IMG_URI, TODO_LIST_IMG_URI} from "../../src/assets/image";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,18 +19,18 @@ export const AppTabNavigator = ()=>{
                    let iconUri;
 
                    if (route.name === "FormSimple") {
-                       iconUri = "https://www.vhv.rs/dpng/d/306-3060594_black-and-white-form-icon-icon-form-transparent.png"
+                       iconUri = FORM_IMG_URI
                    } else if (route.name === "TodoList") {
-                       iconUri = "http://cdn.onlinewebfonts.com/svg/img_568523.png"
+                       iconUri = TODO_LIST_IMG_URI
                    }
                    else if(route.name === "Flexbox"){
-                       iconUri = "https://static.thenounproject.com/png/137357-200.png"
+                       iconUri = FLEXBOX_IMG_URI
                    }
                    else if(route.name === "FormEnhanced"){
-                       iconUri = "https://static.thenounproject.com/png/145052-200.png"
+                       iconUri = FORM_ENHANCED_IMG_URI
                    }
                    else{
-                       iconUri = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/VisualEditor_-_Icon_-_Bullet-list-ltr.svg/1200px-VisualEditor_-_Icon_-_Bullet-list-ltr.svg.png"
+                       iconUri = LIST_IMG_URI
                    }
                    return <Image style={{width:20, height:20}} source={{uri:iconUri}} size={size} color={color} tintColor={color}/>;
                },

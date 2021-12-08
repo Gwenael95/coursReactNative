@@ -1,15 +1,31 @@
-import {Image, Text, View} from "react-native";
 import React from "react";
-import {stylesForm} from "./exos/ppt5/FormEnhanced";
-
-const uriAccountImg = "https://virl.bc.ca/wp-content/uploads/2019/01/AccountIcon2.png"
+import {Image, StyleSheet, Text, View} from "react-native";
+import { IMAGE_ACCOUNT_URI } from "../src/assets/image";
 
 export const AccountHeader = () =>(
-    <View style={stylesForm.header}>
-        <Text style={stylesForm.title}>Inscription</Text>
+    <View style={stylesAccountHeader.header}>
+        <Text style={stylesAccountHeader.title}>Inscription</Text>
         <Image
-            style={stylesForm.accountImage}
-            source={{uri:uriAccountImg}}
+            style={stylesAccountHeader.accountImage}
+            source={{uri:IMAGE_ACCOUNT_URI}}
         />
     </View>
 );
+
+export const stylesAccountHeader = StyleSheet.create({
+    title:{
+        color:"black",
+        fontWeight:"900",
+        fontSize:28
+    },
+    header:{
+        flex:2,
+        justifyContent: "center",
+        alignItems:"center",
+        textAlign: "center"
+    },
+    accountImage:{
+        height:70,
+        width:70,
+    },
+})

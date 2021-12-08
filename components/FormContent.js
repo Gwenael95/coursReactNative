@@ -1,24 +1,41 @@
-import {Text, TextInput, TouchableOpacity, View} from "react-native";
 import React from "react";
-import {stylesForm} from "./exos/ppt5/FormEnhanced";
+import {StyleSheet, TextInput, View} from "react-native";
+import { Button} from "./Button";
 
 export const FormContent = ({firstName, onChangeFirstName, lastName, onChangeLastName, password, onChangePassword,
                          confirmPassword, onChangeConfirmPassword, memoPassword, isPasswordValid,
                          arePasswordEqual, onSubmit}) =>(
-    <View style={[stylesForm.form]}>
-        <TextInput style={stylesForm.inputForm} placeholder="Prénom" value={firstName} onChangeText={onChangeFirstName}></TextInput>
-        <TextInput style={stylesForm.inputForm} placeholder="Nom" value={lastName} onChangeText={onChangeLastName}></TextInput>
+    <View style={[stylesFormContent.form]}>
+        <TextInput style={stylesFormContent.inputForm} placeholder="Prénom" value={firstName} onChangeText={onChangeFirstName}></TextInput>
+        <TextInput style={stylesFormContent.inputForm} placeholder="Nom" value={lastName} onChangeText={onChangeLastName}></TextInput>
         <TextInput secureTextEntry={true}
-                   style={isPasswordValid ? [stylesForm.inputForm] : [stylesForm.inputForm, stylesForm.badInput ]}
+                   style={isPasswordValid ? [stylesFormContent.inputForm] : [stylesFormContent.inputForm, stylesFormContent.badInput ]}
                    placeholder="Mot de passe" value={password} onChangeText={onChangePassword}></TextInput>
         <TextInput secureTextEntry={true}
-                   style={arePasswordEqual ? [stylesForm.inputForm] : [stylesForm.inputForm, stylesForm.badInput ]}
+                   style={arePasswordEqual ? [stylesFormContent.inputForm] : [stylesFormContent.inputForm, stylesFormContent.badInput ]}
                    placeholder="Confirmation mot de passe" value={confirmPassword}
                    onChangeText={onChangeConfirmPassword} onEndEditing={memoPassword}></TextInput>
-        <TouchableOpacity onPress={onSubmit}>
-            <View style={stylesForm.button}>
-                <Text style={stylesForm.buttonText}>Envoyer</Text>
-            </View>
-        </TouchableOpacity>
+
+        <Button onPress={onSubmit}></Button>
     </View>
 )
+
+export const stylesFormContent = StyleSheet.create({
+    form:{
+        flex:5,
+        padding:20,
+        justifyContent:"space-evenly",
+        flexDirection:"column",
+        alignItems:"center"
+    },
+    inputForm:{
+        width:"100%",
+        backgroundColor:"#BCBFBFBF",
+        borderRadius:5,
+    },
+    badInput:{
+        borderColor: "red",
+        borderWidth: 1,
+        borderStyle: "solid"
+    },
+})

@@ -1,52 +1,38 @@
 import React from 'react';
-import {
-    SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View
-} from 'react-native';
-
-function YellowSquare(props) {
-    return<View style={stylesFlexbox.yellowSquare}></View>;
-}
+import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { YellowSquare } from "../../YellowSquare";
 
 export const Flexbox = () => {
     return (
-        <View style={stylesFlexbox.main}>
-        <View style={stylesFlexbox.element1}>
-        </View>
-        <View style={[stylesFlexbox.element2, stylesFlexbox.flexAround]}>
-            <YellowSquare/>
-            <YellowSquare/>
-            <YellowSquare/>
-        </View>
-        <View style={stylesFlexbox.element3}>
-        </View>
-        </View>
+        <SafeAreaView style={stylesFlexbox.main}>
+            <View style={stylesFlexbox.layer1}>
+            </View>
+            <View style={[stylesFlexbox.layer2, stylesFlexbox.flexAround]}>
+                <YellowSquare/>
+                <YellowSquare/>
+                <YellowSquare/>
+            </View>
+            <View style={stylesFlexbox.layer3}>
+            </View>
+        </SafeAreaView>
     );
 }
 
-// @todo comprendre comment utiliser le style de cette class component sand devoir le mettre dans App.js
 export const stylesFlexbox = StyleSheet.create({
     main:{
         flex:1
     },
-    element1:{
+    layer1:{
         flex:1,
         backgroundColor:"#FF0000"
     },
-    element2:{
+    layer2:{
         flex:1,
         backgroundColor:"#00FF00"
     },
-    element3:{
+    layer3:{
         flex:3,
         backgroundColor:"#0000FF"
-    },
-    yellowSquare:{
-        backgroundColor:"#FFFF00",
-        height:50,
-        width:50,
-        borderColor: '#000000',
-        borderWidth: 2,
-        borderStyle: 'solid',
     },
     flexAround:{
         justifyContent:"space-evenly",

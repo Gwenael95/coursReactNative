@@ -1,10 +1,10 @@
+import React from 'react';
 import {TodoListScreen} from "../exos/ppt5/TodoListScreen";
 import {FormEnhanced} from "../exos/ppt5/FormEnhanced";
 import {NamesList} from "../exos/ppt4/NamesList";
 import {Flexbox} from "../exos/ppt4/Flexbox";
 import {TodoDetailsPage} from "../exos/ppt6/TodoDetailsPage";
 import {createStackNavigator} from "@react-navigation/stack";
-import React from 'react';
 
 const Stack = createStackNavigator();
 

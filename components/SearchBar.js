@@ -1,10 +1,20 @@
-import {TextInput, View} from "react-native";
 import React from "react";
-import {stylesTodoList} from "./exos/ppt5/TodoListScreen";
+import {StyleSheet, TextInput, View} from "react-native";
 
 export const SearchBar = ({value, onChange}) => (
-    <View style={stylesTodoList.width100}>
-        <TextInput style={[stylesTodoList.createContainer, stylesTodoList.width100]}
+    <View style={stylesSearchBar.width100}>
+        <TextInput style={[stylesSearchBar.createContainer, stylesSearchBar.width100]}
                    placeholder="Rechercher" value={value} onChangeText={onChange}></TextInput>
     </View>
 );
+
+export const stylesSearchBar = StyleSheet.create({
+    width100:{
+        width:"100%"
+    },
+    createContainer:{
+        justifyContent:"space-between",
+        flexDirection: "row",
+        alignItems:"baseline"
+    },
+})

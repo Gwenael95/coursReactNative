@@ -1,20 +1,40 @@
-import {Text, TouchableOpacity, View} from "react-native";
 import React from "react";
-import {stylesTodoList} from "./exos/ppt5/TodoListScreen";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 export const TodoListItem = ({name, callback, goto,  index}) => (
-    <View style={stylesTodoList.item}>
-        <TouchableOpacity style={stylesTodoList.item} onPress={goto.bind(this, name, index)}>
+    <View style={stylesTodoListItem.item}>
+        <TouchableOpacity style={stylesTodoListItem.item} onPress={goto.bind(this, name, index)}>
             <View>
-                <Text style={stylesTodoList.buttonText}>{name}</Text>
+                <Text style={stylesTodoListItem.buttonText}>{name}</Text>
             </View>
 
             <TouchableOpacity onPress={callback.bind(this, index)}>
-                <View style={stylesTodoList.button}>
-                    <Text style={stylesTodoList.buttonText}>Supprimer</Text>
+                <View style={stylesTodoListItem.button}>
+                    <Text style={stylesTodoListItem.buttonText}>Supprimer</Text>
                 </View>
             </TouchableOpacity>
         </TouchableOpacity>
-
     </View>
 );
+
+export const stylesTodoListItem = StyleSheet.create({
+    button: {
+        marginBottom: 30,
+        alignItems: 'center',
+        backgroundColor: '#ffffff',
+        borderRadius:20,
+        borderColor:"black",
+        borderWidth:2,
+        borderStyle:"solid"
+    },
+    buttonText: {
+        textAlign: 'center',
+        padding: 20,
+        color: 'grey'
+    },
+    item:{
+        backgroundColor:"#eeeeee",
+        flexDirection:"row",
+        justifyContent:"space-between"
+    }
+})

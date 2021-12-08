@@ -1,7 +1,7 @@
+import React from 'react';
 import {TodoListScreen} from "../exos/ppt5/TodoListScreen";
 import {TodoDetailsPage} from "../exos/ppt6/TodoDetailsPage";
 import {createStackNavigator} from "@react-navigation/stack";
-import React from 'react';
 
 const Stack = createStackNavigator();
 
