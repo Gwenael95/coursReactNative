@@ -13,8 +13,8 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { AppNavigator } from "./components/navigators/AppNavigator" // exo ppt 6 - 1
 import { AppTabNavigator } from "./components/navigators/AppTabNavigator"  // exo ppt 6 - 2
-
-
+import { Provider } from "react-redux"
+import { store } from "./src/redux/store";
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,9 +24,11 @@ const App: () => Node = () => {
   };
 
   return (
-      <NavigationContainer>
-        <AppTabNavigator></AppTabNavigator>
-      </NavigationContainer>
+      <Provider store={store}>
+          <NavigationContainer>
+            <AppTabNavigator></AppTabNavigator>
+          </NavigationContainer>
+      </Provider>
   );
 };
 
