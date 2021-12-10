@@ -1,6 +1,6 @@
 import React from "react";
 import {Image, StyleSheet, Text, View} from "react-native";
-import { IMAGE_ACCOUNT_URI } from "../src/assets/image";
+import { IMAGE_ACCOUNT_URI } from "../assets/image";
 
 export const AccountHeader = () =>(
     <View style={stylesAccountHeader.header}>

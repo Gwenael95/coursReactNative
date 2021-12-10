@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {
     Text, SafeAreaView, TouchableOpacity, Image, StyleSheet
 } from 'react-native';
-import { GO_BACK_IMG_URI } from "../../../src/assets/image";
+import { GO_BACK_IMG_URI } from "../../../assets/image";
 
 export const TodoDetailsPage = ({route, navigation}) => {
     const {name, index} = route.params

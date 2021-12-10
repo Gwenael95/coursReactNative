@@ -11,8 +11,8 @@ import type {Node} from 'react';
 import { useColorScheme } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
-import { AppNavigator } from "./components/navigators/AppNavigator" // exo ppt 6 - 1
-import { AppTabNavigator } from "./components/navigators/AppTabNavigator"  // exo ppt 6 - 2
+import { AppNavigator } from "./src/components/navigators/AppNavigator" // exo ppt 6 - 1
+import { AppTabNavigator } from "./src/components/navigators/AppTabNavigator"  // exo ppt 6 - 2
 import { Provider } from "react-redux"
 import { store } from "./src/redux/store";
 

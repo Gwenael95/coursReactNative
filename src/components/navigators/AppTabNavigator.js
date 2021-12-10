@@ -7,7 +7,7 @@ import {NamesList} from "../exos/ppt4/NamesList";
 import {NamesListArray} from "../exos/ppt4/NamesListArray";
 import {Flexbox} from "../exos/ppt4/Flexbox";
 import {Form} from "../exos/ppt4/Form";
-import {FORM_IMG_URI, FLEXBOX_IMG_URI, FORM_ENHANCED_IMG_URI, LIST_IMG_URI, TODO_LIST_IMG_URI} from "../../src/assets/image";
+import {FORM_IMG_URI, FLEXBOX_IMG_URI, FORM_ENHANCED_IMG_URI, LIST_IMG_URI, TODO_LIST_IMG_URI} from "../../assets/image";
 
 const Tab = createBottomTabNavigator();
 
